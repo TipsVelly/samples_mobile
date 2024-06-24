@@ -16,9 +16,21 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'UI Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.orange,
+        fontFamily: 'Roboto',
+        textTheme: TextTheme(
+          titleLarge: const TextStyle(color: Colors.orange),
+          bodyMedium: TextStyle(color: Colors.grey[800]),
+        ),
       ),
-      home: const HomePage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomePage(),
+        '/sample1': (context) => const SamplePage1(),
+        '/sample2': (context) => const SamplePage2(),
+        '/sample3': (context) => const SamplePage3(),
+        '/sample4': (context) => const SamplePage4(),
+      },
     );
   }
 }
@@ -28,63 +40,58 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('UI Sample App'),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'UI Sample App',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w600,
+            fontSize: 24,
+          ),
         ),
-        body: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                MenuButton(
-                  title: 'Sample1: 로그인 화면',
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const SamplePage1()),
-                    );
-                  },
-                ),
-                const SizedBox(height: 10),
-                MenuButton(
-                  title: 'Sample Page 2',
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const SamplePage2()),
-                    );
-                  },
-                ),
-                const SizedBox(height: 10),
-                MenuButton(
-                  title: 'Sample Page 3',
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const SamplePage3()),
-                    );
-                  },
-                ),
-                const SizedBox(height: 10),
-                MenuButton(
-                  title: '샘플4: web-view',
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const SamplePage4()),
-                    );
-                  },
-                ),
-              ],
-            ),
+        backgroundColor: Colors.orange,
+        automaticallyImplyLeading: false,
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              MenuButton(
+                title: 'Sample1: 로그인 화면',
+                icon: Icons.login,
+                onTap: () {
+                  Navigator.pushNamed(context, '/sample1');
+                },
+              ),
+              const SizedBox(height: 10),
+              MenuButton(
+                title: 'Sample2: 메인메뉴',
+                icon: Icons.menu_book,
+                onTap: () {
+                  Navigator.pushNamed(context, '/sample2');
+                },
+              ),
+              const SizedBox(height: 10),
+              MenuButton(
+                title: 'Sample Page 3',
+                icon: Icons.pages,
+                onTap: () {
+                  Navigator.pushNamed(context, '/sample3');
+                },
+              ),
+              const SizedBox(height: 10),
+              MenuButton(
+                title: '샘플4: web-view',
+                icon: Icons.web,
+                onTap: () {
+                  Navigator.pushNamed(context, '/sample4');
+                },
+              ),
+            ],
           ),
         ),
       ),
@@ -94,14 +101,20 @@ class HomePage extends StatelessWidget {
 
 class MenuButton extends StatelessWidget {
   final String title;
+  final IconData icon;
   final VoidCallback onTap;
 
-  const MenuButton({super.key, required this.title, required this.onTap});
+  const MenuButton(
+      {super.key,
+      required this.title,
+      required this.icon,
+      required this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
+    return ElevatedButton.icon(
       onPressed: onTap,
+      icon: Icon(icon, color: Colors.white),
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.orange,
         padding: const EdgeInsets.symmetric(vertical: 16),
@@ -109,7 +122,7 @@ class MenuButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(8.0),
         ),
       ),
-      child: Text(
+      label: Text(
         title,
         style: const TextStyle(fontSize: 18, color: Colors.white),
       ),

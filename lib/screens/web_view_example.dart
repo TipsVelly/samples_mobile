@@ -1,28 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class WebViewExample extends StatefulWidget {
-  const WebViewExample({super.key});
+class WebViewComponent extends StatefulWidget {
+  final String url;
+  const WebViewComponent({super.key, required this.url});
 
   @override
-  WebViewExampleState createState() => WebViewExampleState();
+  WebViewComponentState createState() => WebViewComponentState();
 }
 
-class WebViewExampleState extends State<WebViewExample> {
-  late WebViewController _controller;
+class WebViewComponentState extends State<WebViewComponent> {
+  late final WebViewController _controller;
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: WebView(
-          initialUrl: 'http://tipsvalleydemo.iptime.org:3031/#/mobileTest2',
-          javascriptMode: JavascriptMode.unrestricted,
-          onWebViewCreated: (WebViewController webViewController) {
-            _controller = webViewController;
-          },
-        ),
-      ),
+    return WebView(
+      initialUrl: widget.url,
+      javascriptMode: JavascriptMode.unrestricted,
+      onWebViewCreated: (WebViewController webViewController) {
+        _controller = webViewController;
+      },
     );
   }
 }

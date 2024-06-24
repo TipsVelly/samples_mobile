@@ -7,10 +7,30 @@ class SamplePage4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample Page 4: Web-View'),
+      body: Stack(
+        children: [
+          const WebViewComponent(
+              url: 'http://tipsvalleydemo.iptime.org:3031/#/mobileTest2'),
+          Positioned(
+            bottom: 20,
+            right: 20,
+            child: FloatingActionButton(
+              backgroundColor: Colors.deepOrange.shade300,
+              child: Icon(
+                Icons.home,
+                color: Colors.white.withOpacity(0.8),
+              ),
+              onPressed: () {
+                Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  '/',
+                  (Route<dynamic> route) => false,
+                );
+              },
+            ),
+          ),
+        ],
       ),
-      body: const WebViewExample(),
     );
   }
 }
