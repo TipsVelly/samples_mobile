@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:samples_mobile/wigets/web_view_example.dart';
 
-class SamplePage4 extends StatelessWidget {
-  const SamplePage4({super.key});
+class SamplePage5 extends StatelessWidget {
+  const SamplePage5({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class SamplePage4 extends StatelessWidget {
       body: Stack(
         children: [
           const WebViewComponent(
-              url: 'http://tipsvalleydemo.iptime.org:3031/#/mobileTest2'),
+              url: 'http://tipsvalleydemo.iptime.org:3031/#/customer'),
           Positioned(
             bottom: 20,
             right: 20,

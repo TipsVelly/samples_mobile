@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:samples_mobile/screens/main_menu.dart';
+import 'package:samples_mobile/wigets/main_menu.dart';
 
 class SamplePage2 extends StatelessWidget {
   const SamplePage2({super.key});
