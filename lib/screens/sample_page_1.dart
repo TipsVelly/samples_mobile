@@ -17,7 +17,15 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('로그인 화면')),
+      resizeToAvoidBottomInset: false,
+      appBar: AppBar(
+        title: const Text('로그인 화면'),
+        centerTitle: true,
+        surfaceTintColor: Colors.white,
+        backgroundColor: Colors.white,
+        shadowColor: Colors.black,
+        elevation: 0,
+      ),
       body: GestureDetector(
         onTap: () {
           FocusScope.of(context).unfocus();

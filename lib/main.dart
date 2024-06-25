@@ -16,12 +16,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'UI Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.orange,
-        fontFamily: 'Roboto',
-        textTheme: TextTheme(
-          titleLarge: const TextStyle(color: Colors.orange),
-          bodyMedium: TextStyle(color: Colors.grey[800]),
+        primaryColor: Colors.orange,
+        textTheme: const TextTheme(
+          headlineLarge: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w600,
+            fontSize: 20,
+          ),
         ),
+        cardColor: const Color(0xFFF4EDDB),
       ),
       initialRoute: '/',
       routes: {
