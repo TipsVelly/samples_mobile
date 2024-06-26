@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class ProductListPage extends StatelessWidget {
   const ProductListPage({super.key});
@@ -213,7 +214,7 @@ class ProductItem extends StatelessWidget {
                   Text(description),
                   const SizedBox(height: 4.0),
                   Text(
-                    '₩${price.toString()}',
+                    '₩${NumberFormat('#,###').format(price)}',
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.w600,

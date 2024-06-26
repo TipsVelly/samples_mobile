@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               MenuButton(
-                title: 'Sample1: 로그인 화면',
+                title: '샘플1: 로그인 화면',
                 icon: Icons.login,
                 onTap: () {
                   Navigator.pushNamed(context, '/sample1');
@@ -34,7 +34,7 @@ class HomePage extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               MenuButton(
-                title: 'Sample2: 메인메뉴',
+                title: '샘플2: 메인메뉴',
                 icon: Icons.menu_book,
                 onTap: () {
                   Navigator.pushNamed(context, '/sample2');
@@ -42,7 +42,7 @@ class HomePage extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               MenuButton(
-                title: 'Sample Page 3',
+                title: '샘플3: 주문리스트',
                 icon: Icons.pages,
                 onTap: () {
                   Navigator.pushNamed(context, '/sample3');
@@ -62,6 +62,14 @@ class HomePage extends StatelessWidget {
                 icon: Icons.web,
                 onTap: () {
                   Navigator.pushNamed(context, '/sample5');
+                },
+              ),
+              const SizedBox(height: 10),
+              MenuButton(
+                title: '샘플6: web-view:모바일테스트',
+                icon: Icons.web,
+                onTap: () {
+                  Navigator.pushNamed(context, '/sample6');
                 },
               ),
             ],

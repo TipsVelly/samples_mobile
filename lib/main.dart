@@ -5,6 +5,7 @@ import 'package:samples_mobile/screens/sample_page_2.dart';
 import 'package:samples_mobile/screens/sample_page_3.dart';
 import 'package:samples_mobile/screens/sample_page_4.dart';
 import 'package:samples_mobile/screens/sample_page_5.dart';
+import 'package:samples_mobile/screens/sample_page_6.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
         '/sample3': (context) => const SamplePage3(),
         '/sample4': (context) => const SamplePage4(),
         '/sample5': (context) => const SamplePage5(),
+        '/sample6': (context) => const SamplePage6(),
       },
     );
   }
