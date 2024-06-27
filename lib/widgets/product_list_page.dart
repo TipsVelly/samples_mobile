@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:samples_mobile/widgets/order_summary_page.dart';
 
 class ProductListPage extends StatelessWidget {
   const ProductListPage({super.key});
@@ -128,30 +129,35 @@ class OrderButton extends StatelessWidget {
               height: 50,
               child: ElevatedButton(
                 onPressed: () {
-                  showDialog(
-                    context: context,
-                    builder: (context) => AlertDialog(
-                      title: const Text('상품은 이렇게 정렬됩니다!'),
-                      content: const Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text('상품목록은 기본적으로 최근 주문한 순으로 정렬되어 있습니다.'),
-                          SizedBox(height: 8.0),
-                          Text('즐겨찾는 상품이 있다면, 별 아이콘을 이용해 순서를 상단으로 올려보세요.'),
-                          SizedBox(height: 8.0),
-                          Text('유통사 추천 상품이 있을 경우, 가장 상단에 노출됩니다.'),
-                        ],
-                      ),
-                      actions: [
-                        TextButton(
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
-                          child: const Text('확인'),
-                        ),
-                      ],
-                    ),
-                  );
+                  // showDialog(
+                  //   context: context,
+                  //   builder: (context) => AlertDialog(
+                  //     title: const Text('상품은 이렇게 정렬됩니다!'),
+                  //     content: const Column(
+                  //       mainAxisSize: MainAxisSize.min,
+                  //       children: [
+                  //         Text('상품목록은 기본적으로 최근 주문한 순으로 정렬되어 있습니다.'),
+                  //         SizedBox(height: 8.0),
+                  //         Text('즐겨찾는 상품이 있다면, 별 아이콘을 이용해 순서를 상단으로 올려보세요.'),
+                  //         SizedBox(height: 8.0),
+                  //         Text('유통사 추천 상품이 있을 경우, 가장 상단에 노출됩니다.'),
+                  //       ],
+                  //     ),
+                  //     actions: [
+                  //       TextButton(
+                  //         onPressed: () {
+                  //           Navigator.of(context).pop();
+                  //         },
+                  //         child: const Text('확인'),
+                  //       ),
+                  //     ],
+                  //   ),
+                  // );
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const OrderSummaryPage(),
+                      ));
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.deepOrange.shade700,

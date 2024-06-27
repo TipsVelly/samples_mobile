@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:samples_mobile/wigets/web_view_example.dart';
+import 'package:samples_mobile/widgets/web_view_example.dart';
 
 class SamplePage5 extends StatelessWidget {
   const SamplePage5({super.key});

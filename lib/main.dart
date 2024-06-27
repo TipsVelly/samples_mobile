@@ -6,6 +6,7 @@ import 'package:samples_mobile/screens/sample_page_3.dart';
 import 'package:samples_mobile/screens/sample_page_4.dart';
 import 'package:samples_mobile/screens/sample_page_5.dart';
 import 'package:samples_mobile/screens/sample_page_6.dart';
+import 'package:samples_mobile/screens/sample_page_7.dart';
 
 void main() {
   runApp(const MyApp());
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
         '/sample4': (context) => const SamplePage4(),
         '/sample5': (context) => const SamplePage5(),
         '/sample6': (context) => const SamplePage6(),
+        '/sample7': (context) => const SamplePage7(),
       },
     );
   }
